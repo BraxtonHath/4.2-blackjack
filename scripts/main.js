@@ -8,15 +8,12 @@
    you'll need to parse through that first before you can start to
    write your logic.
 */
-function assert(hand, value) {
-var output = handValue(hand);
 
-function handValue () {
+function handValue (hand) {
 var K, Q, J = 10;
-var hand = [];
 var output = 0;
 for (var i = 0; i < hand.length; i++) {
-  var currentChar = hand.charAt(i);
+  var currentChar = hand[i];
   if (currentChar === '1') {
         currentChar++;
       } else if (currentChar === '2') {
@@ -40,25 +37,17 @@ for (var i = 0; i < hand.length; i++) {
       } else if (currentChar === 'K'|| currentChar === 'Q'|| currentChar === 'J') {
         currentChar= 10;
       } else if (currentChar === 'A'){
-        if (value>11) {
+        if (output>11) {
           currentChar= 1;
         } else {
           currentChar= 11;
         }
       }
-      currentChar=currentChar+Input.charAt(i);
+      output += currentChar;
     }
 return output;
 }
-assert(["2", "2", "8"], 12);
-assert(["2", "2", "K"], 14);
-assert(["2", "Q"], 12);
-assert(["7", "J"], 17);
-assert(["7", "A"], 18);
-assert(["8", "J", "A"], 19);
-assert(["8", "A", "J"], 19);
-assert(["8", "7", "A", "A"], 17);
-}
+
 
 
 
