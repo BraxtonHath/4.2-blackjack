@@ -11,12 +11,12 @@
 function assert(hand, value) {
 var output = handValue(hand);
 
-function handValue (assert) {
+function handValue () {
 var K, Q, J = 10;
-var Input = handValue(assert);
+var hand = [];
 var output = 0;
-for (var i = 0; i < Input.length; i++) {
-  var currentChar = Input.charAt(i);
+for (var i = 0; i < hand.length; i++) {
+  var currentChar = hand.charAt(i);
   if (currentChar === '1') {
         currentChar++;
       } else if (currentChar === '2') {
@@ -50,10 +50,6 @@ for (var i = 0; i < Input.length; i++) {
     }
 return output;
 }
-console.assert(output === value);
-}
-
-
 assert(["2", "2", "8"], 12);
 assert(["2", "2", "K"], 14);
 assert(["2", "Q"], 12);
@@ -62,6 +58,9 @@ assert(["7", "A"], 18);
 assert(["8", "J", "A"], 19);
 assert(["8", "A", "J"], 19);
 assert(["8", "7", "A", "A"], 17);
+}
+
+
 
 
 /* -----  Hints ------
